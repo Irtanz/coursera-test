@@ -1,10 +1,14 @@
 	ul {
 	list-style: none;
 	font-family: cursive;
+	padding: 0px;
+	padding-left: 20px;
+	padding-right: 20px;
 	}
 	h1 {
 		text-align: center;
 		font-family: cursive;
+		font-size: 175%;
 	}
 	li {
 		box-sizing: border-box;
@@ -14,16 +18,20 @@
 		background-color: gray;
 		margin-left: 20px;
 		margin-bottom: 20px;
-		/*width: 29%;*/
 		float: left;
 	}
     li h2 {
+    	font-family: cursive;
+    	font-size: 125%;
+    	margin: 0px;
 		border-bottom:2px solid black;
 		border-left:2px solid black;
 		width: 140px;
 		margin-top: 0px;
 		float: right;
 		text-align: center;
+		height: 40px;
+		line-height: 40px;
 	}
 	li p {
 		clear: both;
@@ -43,24 +51,33 @@
 	}
 
 	@media (min-width: 992px) {
-		li {
-			width: 30%;
+		.one {
+			margin-left: 0px;
 		}
+		li {
+			/*fix left margin, (0+20+20)/3=13.33*/
+			width: calc(33.33% - 14px);
+		}
+
+
 	}
 
 	@media (min-width: 768px) and (max-width: 991px) {
+		.one, .three {
+			margin-left: 0px;
+		}
+		/*fix left margin, (0 + 20) /2 = 10 */
 	    .one, .two {
-	    	width: 47%;
+	    	width: calc(50% - 10px);
 	  
 	    }
 	    .three{
-	    	width: 96%;
+	    	width: 100%;
 	    }
     }
-	/*
+	
 	@media (max-width: 767px){
-    li {
-    	clear: both;
-    	width: 100%;
-    }
-	}*/
+		.one, .two, .three {
+			margin-left: 0px;
+		}
+	}
